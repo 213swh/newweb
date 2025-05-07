@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>芦笋若叶青汁粉 - 活力清体，自然能量 - 双羊农业生态科技有限公司</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <!-- 引入 Poppins 字体 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- 可以在这里添加针对此页面的特定样式，或者添加到 style.css -->
+    <style>
+        /* 可以在这里添加特定于此页面的、不适合放入全局 style.css 的样式 */
+        /* 例如，如果需要覆盖某些全局样式 */
+    </style>
+</head>
+<body class="product-detail-sprout-juice"> <!-- 添加特定类名以方便样式化 -->
+    <!-- 顶部信息栏 (保持不变) -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="contact-info">
+                <span><i class="fa fa-phone"></i> 联系电话：400-123-4567</span>
+                <span><i class="fa fa-envelope"></i> 邮箱：info@shuangyang.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 导航栏 (保持不变) -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+                    <img src="images/双羊logo新.jpg" alt="双羊农业生态科技有限公司">
+                    <span class="company-name" style="font-size: 22px; font-weight: 900;">双羊农业生态科技有限公司</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="about.html">关于我们</a></li>
+                    <li class="active"><a href="products.html">产品中心</a></li>
+                    <li><a href="news.html">新闻动态</a></li>
+                    <li><a href="contact.html">联系我们</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- 页面横幅 -->
+    <section class="page-banner" style="background-image: url('images/芦笋粉-750_01.jpg'); height: 400px; background-size: cover; background-position: center; position: relative;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5);"></div>
+        <div class="container" style="position: relative; z-index: 1; height: 100%; display: flex; align-items: center; justify-content: center; text-align: center;">
+            <div class="page-title">
+                <h1 style="color: #fff; font-size: 48px; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">芦笋若叶青汁粉</h1>
+                <p class="slogan" style="color: #fff; font-size: 24px; text-shadow: 1px 1px 3px rgba(0,0,0,0.3);">活力清体，一杯解锁自然能量</p>
+                <a href="#product-features" class="btn btn-primary" style="display: inline-block; margin-top: 30px; padding: 12px 30px; background: #4CAF50; color: #fff; text-decoration: none; border-radius: 25px; font-size: 18px; transition: all 0.3s ease;">了解更多</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品主视觉区域 -->
+    <section class="product-hero sprout-juice-hero">
+        <div class="container">
+            <div class="product-gallery" style="display: flex; gap: 40px; margin: 40px 0; align-items: flex-start; max-width: 1200px;">
+                <!-- 左侧：大图展示 -->
+                <div style="flex: 1;">
+                    <div class="product-main-image" style="margin-bottom: 15px; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); max-width: 500px;">
+                        <img src="images/青汁粉.jpg" alt="芦笋若叶青汁粉" id="mainImage" style="width: 100%; display: block;">
+                    </div>
+                    <!-- 缩略图区域 -->
+                    <div class="product-thumbnails" style="display: flex; gap: 10px; max-width: 500px;">
+                        <div class="product-thumbnail active" onclick="changeMainImage('images/青汁粉.jpg', '芦笋若叶青汁粉包装')" 
+                             style="border-radius: 8px; overflow:hidden; cursor:pointer; border: 2px solid #795548; flex: 1; max-width: 100px;">
+                            <img src="images/青汁粉.jpg" alt="芦笋若叶青汁粉包装" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="product-thumbnail" onclick="changeMainImage('images/IMG_2557.JPG', '芦笋若叶青汁粉冲调')" 
+                             style="border-radius: 8px; overflow:hidden; cursor:pointer; border: 2px solid transparent; flex: 1; max-width: 100px;">
+                            <img src="images/IMG_2557.JPG" alt="芦笋若叶青汁粉冲调" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="product-thumbnail" onclick="changeMainImage('images/芦笋粉-750_08.jpg', '芦笋若叶青汁粉效果')" 
+                             style="border-radius: 8px; overflow:hidden; cursor:pointer; border: 2px solid transparent; flex: 1; max-width: 100px;">
+                            <img src="images/芦笋粉-750_08.jpg" alt="芦笋若叶青汁粉效果" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 右侧：产品信息 -->
+                <div style="flex: 1; padding: 0 20px;">
+                    <h1 style="font-size: 32px; color: #333; margin-bottom: 15px;">芦笋若叶青汁粉</h1>
+                    <p style="font-size: 20px; color: #4CAF50; margin-bottom: 20px;">活力清体，一杯解锁自然能量</p>
+                    <p style="color: #666; line-height: 1.8; margin-bottom: 30px;">超微细粉工艺，完整保留芦笋营养精华。细腻易吸收，轻松融入您的健康生活。</p>
+                    <div class="product-info" style="background: #f9f9f9; padding: 20px; border-radius: 8px; margin-bottom: 30px;">
+                        <h3 style="color: #333; margin-bottom: 15px;">产品特点</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 10px; color: #666;"><i class="fa fa-check" style="color: #4CAF50; margin-right: 10px;"></i>100%纯天然原料</li>
+                            <li style="margin-bottom: 10px; color: #666;"><i class="fa fa-check" style="color: #4CAF50; margin-right: 10px;"></i>超微粉碎工艺</li>
+                            <li style="margin-bottom: 10px; color: #666;"><i class="fa fa-check" style="color: #4CAF50; margin-right: 10px;"></i>易溶易吸收</li>
+                            <li style="color: #666;"><i class="fa fa-check" style="color: #4CAF50; margin-right: 10px;"></i>营养成分丰富</li>
+                        </ul>
+                    </div>
+                    <a href="contact.html" class="btn-contact" style="display: inline-block; padding: 12px 30px; background: #4CAF50; color: #fff; text-decoration: none; border-radius: 25px; font-size: 18px; transition: all 0.3s ease;">咨询详情</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 添加图片切换的JavaScript -->
+    <script>
+    function changeMainImage(src, alt) {
+        // 更新主图
+        const mainImage = document.getElementById('mainImage');
+        mainImage.src = src;
+        mainImage.alt = alt;
+        
+        // 更新缩略图状态
+        const thumbnails = document.querySelectorAll('.product-thumbnail');
+        thumbnails.forEach(thumb => {
+            if(thumb.querySelector('img').src.includes(src)) {
+                thumb.style.borderColor = '#795548';
+                thumb.classList.add('active');
+            } else {
+                thumb.style.borderColor = 'transparent';
+                thumb.classList.remove('active');
+            }
+        });
+    }
+    </script>
+
+    <!-- 产品特点介绍 -->
+    <section id="product-features" class="page-section features-section">
+        <div class="container">
+            <div class="section-title modern-title">
+                <h2>为什么选择芦笋若叶青汁粉？</h2>
+                <p>天然、便捷、营养全面的健康之选</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa fa-leaf"></i></div>
+                    <h3>完整营养</h3>
+                    <p>采用若叶（嫩叶）和嫩茎，超微粉碎技术保留芦笋全部营养成分。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa fa-check-circle"></i></div>
+                    <h3>易于吸收</h3>
+                    <p>粉质细腻，溶解性好，营养成分更容易被人体吸收利用。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa fa-cogs"></i></div>
+                    <h3>应用广泛</h3>
+                    <p>可添加到水、牛奶、酸奶、果汁或烘焙食品中，方便多样。</p>
+                </div>
+                 <div class="feature-card">
+                    <div class="feature-icon"><i class="fa fa-recycle"></i></div>
+                    <h3>天然纯净</h3>
+                    <p>无添加糖、色素、防腐剂，源自生态种植基地的安心选择。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 使用场景/建议 -->
+    <section class="page-section usage-section">
+        <div class="container">
+             <div class="section-title modern-title">
+                <h2>融入您的健康日常</h2>
+                <p>简单几步，开启活力一天</p>
+            </div>
+            <div class="usage-steps">
+                <div class="usage-step">
+                    <img src="images/芦笋粉-750_10.jpg" alt="冲泡青汁">
+                    <h4>活力早餐</h4>
+                    <p>加入温水或牛奶，快速制作一杯营养早餐饮品。</p>
+                </div>
+                <div class="usage-step">
+                    <img src="images/image5.png" alt="青汁酸奶">
+                    <h4>健康加餐</h4>
+                    <p>混合酸奶或果昔，增添风味与营养。</p>
+                </div>
+                <div class="usage-step">
+                    <img src="images/image4.png" alt="青汁烘焙">
+                    <h4>创意烘焙</h4>
+                    <p>添加到面包、饼干等配方中，制作健康点心。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品规格/参数 (可选) -->
+    <section class="page-section specs-section">
+        <div class="container">
+             <div class="section-title modern-title">
+                <h2>产品规格</h2>
+            </div>
+            <div class="specs-table">
+                <!-- 可以用更现代的列表或表格展示 -->
+                <ul>
+                    <li><strong>产品名称:</strong> 芦笋若叶青汁粉</li>
+                    <li><strong>主要成分:</strong> 100% 芦笋嫩叶嫩茎粉</li>
+                    <li><strong>规格:</strong> 150g/罐</li>
+                    <li><strong>保质期:</strong> 18个月</li>
+                    <li><strong>储存方法:</strong> 置于阴凉干燥处，避免阳光直射</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部信息 (保持不变) -->
+    <footer class="footer">
+        <!-- 页脚内容保持不变 -->
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <img src="images/logo-white.png" alt="双羊农业生态科技有限公司">
+                    </div>
+                    <p>双羊农业生态科技有限公司是一家专注于生态农业发展的企业，致力于为消费者提供绿色、健康、安全的农产品。</p>
+                </div>
+                <div class="footer-contact">
+                    <h3>联系我们</h3>
+                    <ul>
+                        <li><i class="fa fa-map-marker"></i> 地址：XX省XX市XX区XX路XX号</li>
+                        <li><i class="fa fa-phone"></i> 电话：400-123-4567</li>
+                        <li><i class="fa fa-envelope"></i> 邮箱：info@shuangyang.com</li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>快速链接</h3>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="about.html">关于我们</a></li>
+                        <li><a href="products.html">产品中心</a></li>
+                        <li><a href="news.html">新闻动态</a></li>
+                        <li><a href="contact.html">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-qrcode">
+                    <h3>关注我们</h3>
+                    <div class="qrcode">
+                        <img src="images/qrcode.jpg" alt="微信公众号">
+                        <p>扫码关注微信公众号</p>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2024 双羊农业生态科技有限公司 版权所有 | 备案号：粤ICP备XXXXXXXX号</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部 (保持不变) -->
+    <div class="back-to-top">
+        <i class="fa fa-angle-up"></i>
+    </div>
+
+    <!-- JS文件 (保持不变) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <!-- 如果有特定JS交互，可以在这里添加 -->
+
+</body>
+</html>
