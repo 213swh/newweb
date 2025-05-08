@@ -30,8 +30,6 @@ ul, li {
 img {
     max-width: 100%;
     height: auto;
-    display: block;
-    width: 100%;
 }
 
 .container {
@@ -841,13 +839,12 @@ intro-icons::before {
     }
     
     .main-nav {
-        display: none;
-        position: absolute;
-        top: 100%;
+        position: fixed;
+        top: 60px;
         left: 0;
         width: 100%;
-        background: #fff;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        background-color: #fff;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
         padding: 20px 0;
         transform: translateY(-100%);
         opacity: 0;
@@ -872,28 +869,15 @@ intro-icons::before {
     }
     
     .mobile-menu-toggle {
-        display: block;
-        cursor: pointer;
-    }
-    
-    .mobile-menu-toggle span {
-        display: block;
-        width: 25px;
-        height: 3px;
-        background: #333;
-        margin: 5px 0;
-    }
-    
-    .banner-section {
-        height: 300px;
+        display: flex;
     }
     
     .swiper-container {
-        height: 300px;
+        height: 400px;
     }
     
     .slide-content h2 {
-        font-size: 24px;
+        font-size: 32px;
     }
     
     .slide-content p {
