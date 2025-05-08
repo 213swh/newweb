@@ -120,6 +120,185 @@ img {
     justify-content: space-between;
     height: 80px;
 }
+.intro-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+.intro-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 4px;
+    position: relative;
+}
+intro-icons::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - 60px);
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%,
+        #4CAF50 20%,
+        #FFB300 40%,
+        #4CAF50 60%,
+        #FFB300 80%,
+        transparent 100%
+    );
+    z-index: 1;
+}
+.icon-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    font-weight: 600;
+    position: relative;
+    z-index: 2;
+    background: #fff;
+    transition: transform 0.3s ease;
+}
+
+.green {
+    color: #4CAF50;
+    border: 3px solid #4CAF50;
+}
+.icon-circle.yellow {
+    color: #FFB300;
+    border: 3px solid #FFB300;
+}
+
+.icon-circle:hover {
+    transform: scale(1.1);
+}
+
+.intro-text {
+    font-size: 1.1em;
+    color: #333;
+    line-height: 1.8;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+ section.container:not(.intro-section .container):not(.efficacy-header .container) {
+    padding-top: 0; /* 重置之前的padding */
+}
+/* 功效列表样式 - 时间轴风格 */
+.efficacy-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative; /* 用于时间轴线的定位 */
+}
+.efficacy-title {
+    color: #4CAF50;
+    margin-top: 0; 
+    margin-bottom: 8px;
+    font-size: 1.3em; 
+    font-weight: 600;
+    padding-top: 0px; /* 确保标题从内容区域顶部开始 */
+}
+.efficacy-item:not(:last-child) .efficacy-content::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: repeating-linear-gradient(
+        to right,
+        #dcdcdc, /* 更浅的灰色虚线 */
+        #dcdcdc 3px,
+        transparent 3px,
+        transparent 7px
+    );
+    margin-top: 15px;
+}
+
+/* 时间轴竖线 */
+.efficacy-list::before {
+    content: '';
+    position: absolute;
+    left: 95px; /* 图片左边距10px + 图片宽度70px + 图片与时间轴间距15px */
+    top: 5px;
+    bottom: 5px;
+    width: 2px; /* 更细的时间轴线 */
+    background-color: #A9DCA5; /* 浅绿色时间轴线，更接近示例 */
+    z-index: 1;
+}
+.efficacy-item {
+    display: flex; /* 使用 flex 布局帮助对齐 */
+    align-items: flex-start; /* 内容顶部对齐 */
+    margin-bottom: 30px;
+    padding-left: 112px; /* 时间轴左边距95px + 时间轴宽度2px + 时间轴与文本间距15px */
+    position: relative;
+    background: #fff;
+}
+
+/* 时间轴上的圆点 */
+.efficacy-item::before {
+    content: '';
+    position: absolute;
+    left: 90px; /* 时间轴左边距95px - (圆点宽度10px / 2) */
+    top: 30px;  /* (图片高度 70px / 2) - (圆点高度 10px / 2) = 35px - 5px = 30px */
+    width: 10px;
+    height: 10px;
+    background-color: #4CAF50; /* 圆点颜色 */
+    border-radius: 50%;
+    border: 2px solid #fff;
+    z-index: 2;
+}
+.efficacy-desc {
+    font-size: 0.9em; /* 略微减小描述文字大小 */
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+.efficacy-icon {
+    position: absolute; /* 绝对定位，相对于 .efficacy-item */
+    left: 10px;     /* 图片距离 .efficacy-item 左边缘的距离 */
+    top: 0px;         /* 图片移动到 .efficacy-item 的最顶部 */
+    width: 70px;    /* 图片宽度 */
+    height: 70px;   /* 图片高度 */
+    object-fit: cover; 
+    border-radius: 6px; 
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1); 
+    margin-right: 0; 
+}
+.efficacy-icon {
+    left: 10px; 
+    width: 55px;
+    height: 55px;
+    top: 0px; /* 图片移动到顶部 */
+}
+.efficacy-item:not(:last-child) .efficacy-content::after {
+    margin-top: 10px;
+}
+
+
+/* 分隔线 */
+.efficacy-item:not(:last-child) .efficacy-content::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: repeating-linear-gradient(
+        to right,
+        #dcdcdc, /* 更浅的灰色虚线 */
+        #dcdcdc 3px,
+        transparent 3px,
+        transparent 7px
+    );
+    margin-top: 15px;
+}
 
 .logo img {
     height: 60px;
