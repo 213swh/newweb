@@ -6,6 +6,7 @@
     <title>双羊生态农业科技有限公司 - 首页</title>
     <link rel="stylesheet" href="css/style.css">
     <!-- <link rel="stylesheet" href="css/swiper.min.css"> --> <!-- 注释掉本地 CSS -->
+
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> <!-- 使用 Swiper CDN CSS -->
 </head>
 <body>
@@ -20,16 +21,17 @@
     </div>
 
     <!-- 导航栏 -->
+    <!-- 导航栏 -->
     <header class="header">
-        <div class="container">
-            <div class="logo logo-title">
+        <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
+            <div class="logo" style="display: flex; align-items: center;">
                 <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
                     <img src="images/双羊logo新.jpg" alt="双羊生态农业科技有限公司">
                     <span class="company-name" style="font-size: 22px; font-weight: 900;">双羊生态农业科技有限公司</span>
                 </a>
             </div>
             <nav class="main-nav">
-                <ul>
+                <ul style="display: flex; list-style: none; margin: 0; padding: 0;">
                     <li class="active"><a href="index.html">首页</a></li>
                     <li><a href="about.html">关于我们</a></li>
                     <li><a href="products.html">产品中心</a></li>
@@ -67,7 +69,7 @@
                     <img src="images/12.png" alt="双羊农业科技">
                     <div class="slide-content">
                         <h2>科技创新 引领发展</h2>
-                        <p>运用现代农业科技，推动生态农业可持续发展</p>
+                        <p>运用现代农业科技，推动生态农业可持续发展的</p>
                     </div>
                 </div>
             </div>
@@ -198,7 +200,7 @@
                 <img src="images/effect9.png" alt="刺激肾脏活动，促进造血" class="efficacy-icon">
                 <div class="efficacy-content">
                     <h3 class="efficacy-title">刺激肾脏活动，促进造血</h3>
-                    <p class="efficacy-desc">芦笋具有刺激肾脏活动的功能，绿芦笋含有叶绿素，也具有造血功能。</p>
+                    <p class="efficacy-desc">芦笋具有刺激肾脏活动的功能，绿芦笋含有叶绿素，也具有acee函数。</p>
                 </div>
             </li>
             <li class="efficacy-item">
@@ -427,6 +429,23 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var menuToggle = document.querySelector('.mobile-menu-toggle');
+            var nav = document.querySelector('.main-nav');
+        
+            menuToggle.addEventListener('click', function() {
+                nav.classList.toggle('active'); // 切换菜单的显示状态
+            });
+        
+            var menuItems = document.querySelectorAll('.main-nav ul li a');
+            menuItems.forEach(function(item) {
+                item.addEventListener('click', function() {
+                    nav.classList.remove('active'); // 点击菜单项后隐藏菜单
+                });
+            });
+        });
+    </script>
     <script>
         // 初始化公司简介轮播图
         var aboutSwiper = new Swiper('.about-swiper', {

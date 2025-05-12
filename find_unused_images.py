@@ -27,3 +27,33 @@ for img in img_files:
             print(f"删除 {img} 时出错: {e}")
 
 print('未被引用的图片已全部删除。')
+
+def get_image_sizes(directory):
+    """
+    获取指定目录下所有图片的大小并打印。
+
+    :param directory: 图片所在的目录路径
+    """
+    print(f"\n--- {directory} 目录下图片大小 ---")
+    for item in os.listdir(directory):
+        item_path = os.path.join(directory, item)
+        if os.path.isfile(item_path): # 确保是文件而不是子目录
+            try:
+                size_bytes = os.path.getsize(item_path)
+                size_kb = size_bytes / 1024
+                size_mb = size_kb / 1024
+                if size_mb >= 1:
+                    print(f"{item}: {size_mb:.2f} MB")
+                elif size_kb >= 1:
+                    print(f"{item}: {size_kb:.2f} KB")
+                else:
+                    print(f"{item}: {size_bytes} Bytes")
+            except OSError as e:
+                print(f"无法获取 {item} 的大小: {e}")
+
+if __name__ == "__main__":
+    # 例如，可以先执行删除未使用图片的操作，然后再显示图片大小
+
+    # 调用新添加的方法来显示图片大小
+    image_directory = './images'
+    get_image_sizes(image_directory)

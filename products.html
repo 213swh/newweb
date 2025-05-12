@@ -226,5 +226,16 @@
     <!-- JS文件 -->
     <script src="js/jquery.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var menuItems = document.querySelectorAll('.main-nav ul li a');
+            menuItems.forEach(function(item) {
+                item.addEventListener('click', function() {
+                    var nav = document.querySelector('.main-nav');
+                    nav.style.display = 'none'; // 隐藏菜单
+                });
+            });
+        });
+    </script>
 </body>
 </html>

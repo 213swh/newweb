@@ -117,8 +117,36 @@ img {
 .header .container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    height: 80px;
+    justify-content: center; /* 让内容水平居中 */
+    position: relative;
+    height: 60px;
+    /* 如果有 padding 或其他属性，可以保留 */
+}
+
+.logo {
+    margin-right: 40px; /* 让logo和菜单有间距 */
+}
+
+.main-nav {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* 菜单居中 */
+}
+
+.mobile-menu-toggle {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.mobile-menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 .intro-wrapper {
     max-width: 900px;
@@ -320,6 +348,21 @@ intro-icons::before {
     color: #228B22; /* 绿色，可根据品牌色调整 */
 }
 
+@media screen and (max-width: 768px) {
+    .logo-title {
+        height: auto;
+        gap: 15px;
+    }
+    
+    .logo-title img {
+        height: 40px;
+    }
+    
+    .logo-title .company-name {
+        font-size: 20px;
+    }
+}
+
 .main-nav ul {
     display: flex;
 }
@@ -351,20 +394,7 @@ intro-icons::before {
     background-color: #4CAF50;
 }
 
-.mobile-menu-toggle {
-    display: none;
-    flex-direction: column;
-    width: 30px;
-    cursor: pointer;
-}
 
-.mobile-menu-toggle span {
-    height: 3px;
-    width: 100%;
-    background-color: #333;
-    margin-bottom: 5px;
-    border-radius: 2px;
-}
 
 /* 轮播图 */
 .banner-section {
@@ -887,6 +917,24 @@ intro-icons::before {
     }
 }
 
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        padding: 0 20px;
+    }
+    
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .about-features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 992px) {
     .about-content {
         flex-direction: column;
@@ -917,65 +965,146 @@ intro-icons::before {
     }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
+    .header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background: #fff;
+        z-index: 1000;
+    }
+    
     .header .container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
         height: 60px;
+        padding: 0 15px;
+        position: relative;
+    }
+    
+    .logo {
+        margin-bottom: 0;
     }
     
     .logo img {
         height: 40px;
     }
     
+    .company-name {
+        font-size: 18px !important;
+    }
+    
+    /* 移动端菜单按钮样式 */
+    .mobile-menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 20px;
+        background: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    .mobile-menu-toggle span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: #333;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+        transform-origin: left center;
+    }
+    
+    /* 移动端导航菜单样式 */
     .main-nav {
         position: fixed;
         top: 60px;
         left: 0;
         width: 100%;
+        height: calc(100vh - 60px);
         background-color: #fff;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
         padding: 20px 0;
         transform: translateY(-100%);
-        opacity: 0;
+        transition: transform 0.3s ease;
+        z-index: 1000;
+        overflow-y: auto;
         visibility: hidden;
-        transition: all 0.3s ease;
-        z-index: 99;
     }
-    
     .main-nav.active {
         transform: translateY(0);
-        opacity: 1;
         visibility: visible;
     }
     
     .main-nav ul {
         flex-direction: column;
         align-items: center;
+        display: flex;
+        padding: 0;
+        margin: 0;
     }
     
     .main-nav li {
         margin: 10px 0;
+        width: 100%;
+        text-align: center;
     }
     
-    .mobile-menu-toggle {
-        display: flex;
+    .main-nav li a {
+        padding: 15px 0;
+        display: block;
+        width: 100%;
+        color: #333;
+        font-size: 16px;
     }
     
+    body {
+        padding-top: 60px;
+    }
+
+    
+    /* 内容区域适配 */
+    .container {
+        padding: 0 15px;
+    }
+    
+    /* 首页轮播图适配 */
     .swiper-container {
         height: 400px;
     }
     
-    .slide-content h2 {
-        font-size: 32px;
+    .banner-section .slide-content h2 {
+        font-size: 24px;
     }
     
-    .slide-content p {
-        font-size: 16px;
+    .banner-section .slide-content p {
+        font-size: 14px;
     }
     
+    /* 产品展示适配 */
     .product-list {
         grid-template-columns: repeat(1, 1fr);
     }
     
+    /* 关于我们页面适配 */
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .about-text, .about-image {
+        width: 100%;
+    }
+    
+    /* 企业优势适配 */
+    .about-features {
+        grid-template-columns: 1fr;
+    }
+    
+    /* 新闻列表适配 */
     .news-list {
         grid-template-columns: repeat(1, 1fr);
     }
@@ -983,7 +1112,37 @@ intro-icons::before {
     .partner-item {
         flex: 0 0 calc(33.33% - 30px);
     }
+    
+    /* 底部信息适配 */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-info, .footer-contact, .footer-links, .footer-qrcode {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    /* 联系我们页面适配 */
+    .contact-content {
+        flex-direction: column;
+    }
+    
+    .contact-form, .contact-info {
+        width: 100%;
+    }
+    
+    /* 产品详情页适配 */
+    .product-detail-content {
+        flex-direction: column;
+    }
+    
+    .product-detail-images, .product-detail-info {
+        width: 100%;
+    }
 }
+
 
 @media (max-width: 576px) {
     .section-title h2 {
@@ -1159,6 +1318,38 @@ intro-icons::before {
 .feature-item p {
     color: #666;
 }
+
+/* 企业优势图标新样式 */
+.about-features .feature-item .feature-icon {
+    width: 60px; /* 您可以根据需要调整圆圈的大小 */
+    height: 60px; /* 您可以根据需要调整圆圈的大小 */
+    background-color: #4CAF50; /* 这是常用的绿色，您可以根据您的品牌色进行调整 */
+    border-radius: 50%; /* 使其变为圆形 */
+    margin: 0 auto 20px auto; /* 将圆圈居中并在其下方添加一些间距 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px; /* 为图片和圆圈边缘留出一些空间 */
+    box-sizing: border-box; /* 确保padding包含在width/height内 */
+    overflow: hidden; /* 防止图片溢出圆圈 */
+}
+
+.about-features .feature-item .feature-icon img {
+    max-width: 100%; /* 图片最大宽度不超过容器 */
+    max-height: 100%; /* 图片最大高度不超过容器 */
+    object-fit: contain; /* 保持图片纵横比，完整显示在容器内 */
+    display: block; /* 移除图片下方的额外空间 */
+}
+
+/* 如果您希望在圆圈内部添加新的符号或文字（可选） */
+/*
+.about-features .feature-item .feature-icon::before {
+    content: "✔"; // 示例：添加一个勾号
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+*/
 
 .about-history {
     position: relative;
@@ -1524,6 +1715,27 @@ intro-icons::before {
     .contact-icon-circle .icon {
         width: 30px;
         height: 30px;
+    }
+
+    .product-detail {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .product-gallery {
+        flex: 0 0 100%;
+    }
+    
+    .product-main-image {
+        height: 300px;
+    }
+    
+    .product-thumbnails {
+        gap: 8px;
+    }
+    
+    .product-info-detail {
+        flex: 0 0 100%;
     }
 }
 
