@@ -90,7 +90,7 @@
                 <!-- 原有的新闻项 -->
                 <div class="news-item" data-category="company">
                     <div class="news-image">
-                        <img src="images/news1.jpg" alt="公司新闻">
+                        <img src="images/IMG_8996.jpg" alt="公司新闻">
                     </div>
                     <div class="news-info">
                         <span class="news-date">2024-05-15</span>
@@ -99,66 +99,7 @@
                         <a href="news-detail.html?id=1" class="read-more">阅读更多</a>
                     </div>
                 </div>
-                
-                <div class="news-item" data-category="industry">
-                    <div class="news-image">
-                        <img src="images/news2.jpg" alt="行业动态">
-                    </div>
-                    <div class="news-info">
-                        <span class="news-date">2024-05-10</span>
-                        <h3>2024年农业发展新趋势分析报告发布</h3>
-                        <p>近日，国家农业部发布了《2024年农业发展新趋势分析报告》，报告指出，生态农业将成为未来农业发展的主要方向...</p>
-                        <a href="news-detail.html?id=2" class="read-more">阅读更多</a>
-                    </div>
-                </div>
-                
-                <div class="news-item" data-category="company">
-                    <div class="news-image">
-                        <img src="images/news3.jpg" alt="公司新闻">
-                    </div>
-                    <div class="news-info">
-                        <span class="news-date">2024-05-05</span>
-                        <h3>双羊农业新品发布会圆满举行</h3>
-                        <p>5月5日，双羊生态农业科技有限公司在总部举行了新品发布会，发布了多款新型生态农产品，受到了业界广泛关注...</p>
-                        <a href="news-detail.html?id=3" class="read-more">阅读更多</a>
-                    </div>
-                </div>
-                
-                <div class="news-item" data-category="activity">
-                    <div class="news-image">
-                        <img src="images/news4.jpg" alt="活动信息">
-                    </div>
-                    <div class="news-info">
-                        <span class="news-date">2024-04-28</span>
-                        <h3>双羊农业参加2024全国农业博览会</h3>
-                        <p>4月28日至5月3日，双羊生态农业科技有限公司参加了在北京举行的2024全国农业博览会，展示了公司最新的生态农业技术和产品...</p>
-                        <a href="news-detail.html?id=4" class="read-more">阅读更多</a>
-                    </div>
-                </div>
-                
-                <div class="news-item" data-category="industry">
-                    <div class="news-image">
-                        <img src="images/news5.jpg" alt="行业动态">
-                    </div>
-                    <div class="news-info">
-                        <span class="news-date">2024-04-20</span>
-                        <h3>农业部发布新政策，支持生态农业发展</h3>
-                        <p>近日，农业部发布了一系列新政策，旨在支持生态农业发展，促进农业可持续发展，提高农产品质量安全水平...</p>
-                        <a href="news-detail.html?id=5" class="read-more">阅读更多</a>
-                    </div>
-                </div>
-                
-                <div class="news-item" data-category="activity">
-                    <div class="news-image">
-                        <img src="images/news6.jpg" alt="活动信息">
-                    </div>
-                    <div class="news-info">
-                        <span class="news-date">2024-04-15</span>
-                        <h3>双羊农业开展"走进农村，服务农民"活动</h3>
-                        <p>为了更好地服务农民，推广生态农业技术，双羊生态农业科技有限公司近日开展了"走进农村，服务农民"活动...</p>
-                        <a href="news-detail.html?id=6" class="read-more">阅读更多</a>
-                    </div>
-                </div>
+              
                 
                 <div class="news-item" data-category="industry">
                     <div class="news-image">
@@ -241,21 +182,27 @@
     <script>
         // 新闻分类筛选
         $(document).ready(function() {
-            $('.news-categories li a').click(function() {
+            // 确保页面加载时显示所有新闻
+            $('.news-item').show();
+            
+            $('.news-categories li a').on('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
                 // 移除所有active类
                 $('.news-categories li').removeClass('active');
                 // 添加当前点击的active类
                 $(this).parent().addClass('active');
                 
                 // 获取分类
-                var category = $(this).data('category');
+                var category = $(this).attr('data-category');
                 
                 // 显示或隐藏新闻项
                 if (category === 'all') {
-                    $('.news-item').show();
+                    $('.news-item').fadeIn(300);
                 } else {
                     $('.news-item').hide();
-                    $('.news-item[data-category="' + category + '"]').show();
+                    $('.news-item[data-category="' + category + '"]').fadeIn(300);
                 }
             });
         });
