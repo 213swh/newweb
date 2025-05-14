@@ -1,0 +1,170 @@
+/* 新闻页面样式 */
+
+/* 页面横幅 */
+.page-banner {
+    position: relative;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.page-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.page-title {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: #fff;
+}
+
+.page-title h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.page-title .slogan {
+    font-size: 18px;
+    font-style: italic;
+}
+
+/* 页面内容 */
+.page-content {
+    padding: 50px 0;
+}
+
+/* 新闻分类 */
+.news-categories {
+    margin-bottom: 40px;
+}
+
+.news-categories ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.news-categories li {
+    margin: 0 10px 10px;
+}
+
+.news-categories li a {
+    display: block;
+    padding: 8px 20px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.news-categories li.active a,
+.news-categories li a:hover {
+    background-color: #4CAF50;
+    color: #fff;
+    border-color: #4CAF50;
+}
+
+/* 新闻列表 */
+.news-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.news-item {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.news-item:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+.news-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.news-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.news-item:hover .news-image img {
+    transform: scale(1.1);
+}
+
+.news-info {
+    padding: 20px;
+}
+
+.news-date {
+    display: block;
+    color: #999;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.news-info h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.news-info p {
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.read-more {
+    display: inline-block;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+/* 响应式调整 */
+@media (max-width: 992px) {
+    .news-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .news-list {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+    .page-banner {
+        height: 200px;
+    }
+    
+    .page-title h1 {
+        font-size: 28px;
+    }
+    
+    .page-title .slogan {
+        font-size: 16px;
+    }
+}

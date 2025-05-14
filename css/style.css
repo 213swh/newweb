@@ -161,7 +161,7 @@ img {
     margin-bottom: 4px;
     position: relative;
 }
-intro-icons::before {
+.intro-icons::before {
     content: '';
     position: absolute;
     left: 50%;
@@ -561,10 +561,15 @@ intro-icons::before {
     padding: 8px 20px;
     border: 1px solid #ddd;
     border-radius: 20px;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
 }
 
-.product-categories li.active a,
+.product-categories li.active a {
+    color: #38a169;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
 .product-categories li a:hover {
     background-color: #4CAF50;
     color: #fff;
@@ -581,7 +586,12 @@ intro-icons::before {
     border: 1px solid #eee;
     border-radius: 8px;
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease;
+    display: none;
+}
+
+.product-item.show {
+    display: block;
 }
 
 .product-item:hover {

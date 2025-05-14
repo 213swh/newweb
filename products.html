@@ -72,10 +72,9 @@
             <div class="product-categories">
                 <ul>
                     <li class="active"><a href="javascript:void(0)" data-category="all">全部产品</a></li>
-                    <li><a href="javascript:void(0)" data-category="vegetable">有机蔬菜</a></li>
-                    <li><a href="javascript:void(0)" data-category="fruit">生态水果</a></li>
-                    <li><a href="javascript:void(0)" data-category="grain">绿色粮油</a></li>
-                    <li><a href="javascript:void(0)" data-category="special">特色农产品</a></li>
+                    <li><a href="javascript:void(0)" data-category="fruit">终端产品</a></li>
+                    <li><a href="javascript:void(0)" data-category="grain">原料供应</a></li>
+                    <li><a href="javascript:void(0)" data-category="special">有机蔬菜</a></li>
                 </ul>
             </div>
             
@@ -90,7 +89,7 @@
                         <!-- 确保这里有您其他的现有产品项 -->
                         
                         <!-- 替换为：芦笋澄清浓缩液 -->
-                        <div class="product-item">
+                        <div class="product-item" data-category="grain">
                             <div class="product-image">
                                 <a href="product-detail-concentrate.html"> <!-- 链接到新的详情页 -->
                                     <!-- 使用产品列表图 -->
@@ -105,7 +104,7 @@
                         </div>
 
                         <!-- 芦笋代餐粉 -->
-                        <div class="product-item">
+                        <div class="product-item" data-category="fruit">
                             <div class="product-image">
                                 <a href="product-detail-meal-replacement.html">
                                     <img src="images/代餐粉产品图.jpeg" alt="芦笋代餐粉">
@@ -119,7 +118,7 @@
                         </div>
                         
                         <!-- 芦笋青汁粉 -->
-                        <div class="product-item">
+                        <div class="product-item" data-category="grain">
                             <div class="product-image">
                                 <a href="product-detail-sprout-juice.html">
                                     <img src="images/DSC_5323.webp" alt="芦笋青汁粉">
@@ -132,7 +131,7 @@
                             </div>
                         </div>
                           <!-- 芦笋香菇浓缩液 (确保此项存在且正确) -->
-                <div class="product-item">
+                <div class="product-item" data-category="fruit">
                     <div class="product-image">
                         <a href="product-detail-asparagus.html"> <!-- 链接到芦笋香菇浓缩液详情页 -->
                             <img src="images/浓缩液图片.jpeg" alt="芦笋香菇浓缩液"> <!-- 列表页图片 -->
@@ -145,7 +144,7 @@
                     </div>
                 </div>
                         <!-- 新增：芦笋澄清速溶粉 -->
-                        <div class="product-item">
+                        <div class="product-item" data-category="grain">
                             <div class="product-image">
                                 <a href="product-detail-soluble-powder.html"> <!-- 链接到新的详情页 -->
                                     <!-- 使用产品列表图 -->
@@ -228,11 +227,51 @@
     <script src="js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // 移动端菜单处理
             var menuItems = document.querySelectorAll('.main-nav ul li a');
             menuItems.forEach(function(item) {
                 item.addEventListener('click', function() {
                     var nav = document.querySelector('.main-nav');
-                    nav.style.display = 'none'; // 隐藏菜单
+                    nav.style.display = 'none';
+                });
+            });
+
+            // 产品分类切换功能
+            const categoryButtons = document.querySelectorAll('.product-categories ul li a');
+            const productItems = document.querySelectorAll('.product-item');
+    
+            // 页面加载时显示所有产品
+            productItems.forEach(item => {
+                item.style.display = 'block';
+            });
+    
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // 移除所有分类按钮的active类
+                    categoryButtons.forEach(btn => {
+                        btn.parentElement.classList.remove('active');
+                    });
+                    
+                    // 为当前点击的按钮添加active类
+                    this.parentElement.classList.add('active');
+                    
+                    const selectedCategory = this.getAttribute('data-category');
+                    
+                    // 显示或隐藏产品
+                    productItems.forEach(item => {
+                        if (selectedCategory === 'all') {
+                            item.style.display = 'block';
+                        } else {
+                            // 假设每个产品项都有一个data-category属性
+                            if (item.getAttribute('data-category') === selectedCategory) {
+                                item.style.display = 'block';
+                            } else {
+                                item.style.display = 'none';
+                            }
+                        }
+                    });
                 });
             });
         });
