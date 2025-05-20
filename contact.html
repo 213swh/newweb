@@ -23,7 +23,7 @@
         <div class="container">
             <div class="logo">
                 <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
-                    <img src="images/双羊logo新.jpg" alt="双羊生态农业科技有限公司">
+                    <img src="images/sylogo.jpg" alt="双羊生态农业科技有限公司">
                     <span class="company-name" style="font-size: 22px; font-weight: 900;">双羊生态农业科技有限公司</span>
                 </a>
             </div>
@@ -102,7 +102,7 @@
                 <h2>在线留言</h2>
                 <p>ONLINE MESSAGE</p>
             </div>
-            <form class="contact-form" id="contactForm">
+            <form class="contact-form" id="contactForm" action="https://formsubmit.co/835223101@qq.com" method="POST">
                 <div class="form-row">
                     <div class="form-group">
                         <label class="form-label">姓名</label>
@@ -130,10 +130,7 @@
         </div>
     </section>
 
-    <!-- 地图 -->
-    <section class="map-section">
-        <iframe src="https://map.baidu.com/" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-    </section>
+    <!-- 删除地图部分的代码 -->
 
     <!-- 底部信息 -->
     <footer class="footer">
@@ -193,23 +190,47 @@
             $('#contactForm').submit(function(e) {
                 e.preventDefault();
                 
-                // 获取表单数据
-                var formData = {
-                    name: $('input[name="name"]').val(),
-                    phone: $('input[name="phone"]').val(),
-                    email: $('input[name="email"]').val(),
-                    subject: $('input[name="subject"]').val(),
-                    message: $('textarea[name="message"]').val()
-                };
+                // 禁用提交按钮，防止重复提交
+                $('.submit-btn').prop('disabled', true).text('提交中...');
                 
-                // 这里可以添加表单验证逻辑
+                // 构建表单数据
+                var formData = new FormData(this);
                 
-                // 这里可以添加AJAX请求发送数据到后端
-                console.log('表单数据：', formData);
-                alert('感谢您的留言，我们会尽快与您联系！');
+                // 使用原生 form 提交
+                var form = document.createElement('form');
+                form.method = 'POST';
+                form.action = 'https://formsubmit.co/835223101@qq.com';
                 
-                // 清空表单
-                this.reset();
+                // 添加所有表单数据
+                for (var pair of formData.entries()) {
+                    var input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.name = pair[0];
+                    input.value = pair[1];
+                    form.appendChild(input);
+                }
+                
+                // 添加必要的 FormSubmit 配置
+                var configInput = document.createElement('input');
+                configInput.type = 'hidden';
+                configInput.name = '_captcha';
+                configInput.value = 'false';
+                form.appendChild(configInput);
+                
+                // 添加成功跳转页面
+                var redirectInput = document.createElement('input');
+                redirectInput.type = 'hidden';
+                redirectInput.name = '_next';
+                redirectInput.value = window.location.href;
+                form.appendChild(redirectInput);
+                
+                document.body.appendChild(form);
+                form.submit();
+                
+                // 5秒后恢复按钮状态（如果页面没有跳转）
+                setTimeout(function() {
+                    $('.submit-btn').prop('disabled', false).text('提交留言');
+                }, 5000);
             });
         });
     </script>
