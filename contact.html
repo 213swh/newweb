@@ -102,7 +102,7 @@
                 <h2>在线留言</h2>
                 <p>ONLINE MESSAGE</p>
             </div>
-            <form class="contact-form" id="contactForm" action="https://formsubmit.co/835223101@qq.com" method="POST">
+            <form class="contact-form" id="contactForm">
                 <div class="form-row">
                     <div class="form-group">
                         <label class="form-label">姓名</label>
@@ -193,44 +193,37 @@
                 // 禁用提交按钮，防止重复提交
                 $('.submit-btn').prop('disabled', true).text('提交中...');
                 
-                // 构建表单数据
-                var formData = new FormData(this);
+                // 获取表单数据
+                var formData = {
+                    name: $('input[name="name"]').val(),
+                    phone: $('input[name="phone"]').val(),
+                    email: $('input[name="email"]').val(),
+                    subject: $('input[name="subject"]').val(),
+                    message: $('textarea[name="message"]').val()
+                };
                 
-                // 使用原生 form 提交
-                var form = document.createElement('form');
-                form.method = 'POST';
-                form.action = 'https://formsubmit.co/835223101@qq.com';
-                
-                // 添加所有表单数据
-                for (var pair of formData.entries()) {
-                    var input = document.createElement('input');
-                    input.type = 'hidden';
-                    input.name = pair[0];
-                    input.value = pair[1];
-                    form.appendChild(input);
-                }
-                
-                // 添加必要的 FormSubmit 配置
-                var configInput = document.createElement('input');
-                configInput.type = 'hidden';
-                configInput.name = '_captcha';
-                configInput.value = 'false';
-                form.appendChild(configInput);
-                
-                // 添加成功跳转页面
-                var redirectInput = document.createElement('input');
-                redirectInput.type = 'hidden';
-                redirectInput.name = '_next';
-                redirectInput.value = window.location.href;
-                form.appendChild(redirectInput);
-                
-                document.body.appendChild(form);
-                form.submit();
-                
-                // 5秒后恢复按钮状态（如果页面没有跳转）
-                setTimeout(function() {
+                // 使用 fetch API 发送请求
+                fetch('https://formsubmit.co/ajax/835223101@qq.com', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert('感谢您的留言，我们会尽快与您联系！');
+                    $('#contactForm')[0].reset();
+                })
+                .catch(error => {
+                    alert('抱歉，提交失败，请稍后重试或直接联系我们。');
+                    console.error('提交错误：', error);
+                })
+                .finally(() => {
+                    // 恢复提交按钮状态
                     $('.submit-btn').prop('disabled', false).text('提交留言');
-                }, 5000);
+                });
             });
         });
     </script>
