@@ -887,8 +887,13 @@ img {
 }
 
 .copyright p {
-    color: #999;
+    color: #fff; /* 设置备案号文字颜色为白色 */
     font-size: 12px;
+}
+
+.copyright p a {
+    color: #fff; /* 确保备案号链接文字颜色为白色 */
+    text-decoration: none; /* 移除备案号链接的下划线 */
 }
 
 /* 返回顶部 */
