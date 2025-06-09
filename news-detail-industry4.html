@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>芦笋汁</title>
+    <meta name="description" content="双羊生态农业科技有限公司专注于生态农业发展,提供优质农产品,包括芦笋粉,芦笋浓缩,芦笋速溶粉,芦笋加工,芦笋汁,芦笋浓缩汁等健康产品。">
+    <meta name="keywords" content="芦笋粉,芦笋浓缩,芦笋速溶粉,芦笋加工,芦笋汁,芦笋浓缩汁">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/news.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <style>
+        /* 整体页面样式优化 */
+        body {
+            background-color: #f5f7fa;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        /* 文章容器样式 */
+        .news-detail {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            padding: 40px;
+            margin: 40px auto;
+            max-width: 800px;
+        }
+
+        /* 文章标题样式 */
+        .news-header h1 {
+            font-size: 36px;
+            color: #1a1a1a;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 700;
+            line-height: 1.4;
+            letter-spacing: -0.5px;
+        }
+
+        /* 文章元信息样式 */
+        .news-meta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px;
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #edf2f7;
+            color: #718096;
+            font-size: 14px;
+        }
+
+        .news-meta span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .news-meta i {
+            color: #38a169;
+        }
+
+        /* 文章内容样式 */
+        .news-content {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #2d3748;
+        }
+
+        .news-content p {
+            margin-bottom: 24px;
+            text-indent: 2em;
+        }
+
+        /* 标题样式 */
+        .news-content h2 {
+            font-size: 28px;
+            color: #2d3748;
+            margin: 40px 0 24px;
+            font-weight: 600;
+            position: relative;
+            padding-left: 16px;
+        }
+
+        .news-content h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 24px;
+            background: #38a169;
+            border-radius: 2px;
+        }
+
+        /* 补充文章内容列表样式 */
+        .news-content ul {
+            background: #f8fafc;
+            padding: 24px 40px;
+            border-radius: 12px;
+            margin: 24px 0;
+        }
+
+        .news-content li {
+            margin-bottom: 12px;
+            position: relative;
+            list-style-type: none;
+            padding-left: 24px;
+        }
+
+        .news-content li::before {
+            content: '•';
+            color: #38a169;
+            font-size: 20px;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        /* 补充提示框样式 */
+        .news-tips {
+            background: #f0fff4;
+            border-left: 4px solid #38a169;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 32px 0;
+        }
+
+        .news-tips p {
+            margin: 0;
+            color: #2f855a;
+        }
+
+        /* 分享按钮样式 */
+        .news-share {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #edf2f7;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .share-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #f7fafc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4a5568;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .share-icon:hover {
+            background: #38a169;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .news-detail {
+                padding: 20px;
+                margin: 20px;
+            }
+
+            .news-header h1 {
+                font-size: 24px;
+            }
+
+            .news-meta {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部信息栏 -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="contact-info">
+                <span><i class="fa fa-phone"></i> 联系电话：13921619977</span>
+                <span><i class="fa fa-envelope"></i> 邮箱：343553576@qq.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+                    <img src="images/sylogo.jpg" alt="双羊生态农业科技有限公司">
+                    <span class="company-name" style="font-size: 22px; font-weight: 900;">双羊生态农业科技有限公司</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="about.html">关于我们</a></li>
+                    <li><a href="products.html">产品中心</a></li>
+                    <li class="active"><a href="news.html">新闻动态</a></li>
+                    <li><a href="contact.html">联系我们</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- 页面横幅 -->
+    <section class="page-banner" style="background-image: url('images/WechatIMG204.webp');">
+        <div class="container">
+            <div class="page-title">
+                <h1>新闻详情</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- 新闻详情内容 -->
+    <section class="page-content">
+        <div class="container">
+            <div class="news-detail">
+                <div class="news-header">
+                    <h1>吹爆这6款抗炎低卡果蔬汁！必喝！</h1>
+                    <div class="news-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-03-15</span>
+                        <span><i class="fa fa-user"></i> 来源:双羊生态农业</span>
+                        <span><i class="fa fa-folder"></i> 分类：行业动态</span>
+                    </div>
+                </div>
+                
+                <div class="news-content">
+                    <p>哈喽宝子们🤓，今天给大家带来6款超棒的低卡抗火火果蔬汁！就算你不在减脂期，也非常值得喝哦。坚持喝，你就能收获良好的体态、透亮的皮肤和满满的精力~</p>
+
+                    <h2>6款果蔬汁大揭秘</h2>
+                    <p>1. <strong>生姜菠萝苹果饮</strong>🍍🍎🧂——减脂促代谢：生姜的辛辣能加速新代谢，菠萝和苹果富含的酶类和维生素，能助力脂肪燃烧，排出体内多余水分。</p>
+                    
+                    <p>2. <strong>羽衣甘蓝苹果饮</strong>🥬🍎——噗噗畅通：羽衣甘蓝丰富的膳食纤维，加上苹果的果胶，能促进肠道蠕动，让你轻松解决便秘困扰。</p>
+                    
+                    <p>3. <strong>羽衣甘蓝橙子胡萝卜饮</strong>🥬🍊🥕——美白焕肤：羽衣甘蓝、橙子和胡萝卜都含有丰富的维生素C和胡萝卜素，可抑制黑色素生成，提亮肤色，让肌肤焕发光彩。</p>
+                    
+                    <p>4. <strong>番茄紫甘蓝猕猴桃饮</strong>🍅🥬🥝——抗氧氧亮肤：番茄红素、紫甘蓝的花青素和猕猴桃的维生素C强强联合，抗氧化效果一流，帮你抵御自由基，延缓肌肤衰老。</p>
+                    
+                    <p>5. <strong>番茄苹果生菜饮</strong>🍅🍎🥬——解腻清肠：番茄和生菜的清爽，搭配苹果的香甜，既能解油腻，又能为肠道来一次深度清洁。</p>
+                    
+                    <p>6. <strong>猕猴桃雪梨汁</strong>🥝🍐——调理肠道：猕猴桃的膳食纤维和雪梨的润燥功效，能调节肠道菌群，让肠道环境更健康。</p>
+
+                    <h2>各款功效超厉害</h2>
+                    <p>这些果蔬汁除了上述提到的功效，还有更多隐藏好处哦。比如芦笋汁，它可是号称"果蔬汁之王"。富含微量元素硒、组织蛋白、叶酸、核酸、芦笋皂苷等。硒号称抗癌元素之王，能阻止癌细胞分裂与生长，抑制致癌物的活力并加速解毒，刺激机体免疫功能。还含有芦丁、芦笋皂苷、天门冬酰胺等物质，对预防心脑血管疾病有很好的效果。西蓝花澄清浓缩液含有的硫葡萄糖甙和胡萝卜素具有强有力抗癌作用，能杀灭导致幽门螺旋菌，预防癌病。</p>
+                    
+                    <p>这里不得不提到南通双羊农业生态科技公司的产品。他家的芦笋澄清原汁、西蓝花澄清浓缩汁等，都是制作这些果蔬汁的优质原料。其芦笋产品无论是浓缩汁还是速溶粉，都含有丰富的营养成分，像香豆素能降低血糖，多种维生素能清血和平衡血糖。西蓝花产品含大量类黄酮物质，可防治高血压、降血糖和血脂。</p>
+
+                    <h2>宝子按需放心选</h2>
+                    <p>如果你想减脂促代谢，那就选生姜菠萝苹果饮；肠道不通畅，羽衣甘蓝苹果饮是你的好帮手；追求美白焕肤，羽衣甘蓝橙子胡萝卜饮值得尝试；注重抗氧化亮肤，番茄紫甘蓝猕猴桃饮很合适；感觉油腻想清肠，番茄苹果生菜饮能满足你；肠道需要调理，就选择猕猴桃雪梨汁。</p>
+                    
+                    <p>宝子们可以按照自己的需求放心选择这些果蔬汁哦。坚持喝下去，相信你会看到身体和皮肤的奇妙变化💖。让我们一起通过喝果蔬汁，收获健康与美丽吧🥰！</p>
+                    
+                    <p>#果蔬汁 #抗炎 #抗炎果蔬汁 #羽衣甘蓝 #羽衣甘蓝榨汁搭配 #超模饮食 #快乐减脂水</p>
+                </div>
+                
+                <!-- 分享按钮 -->
+                <div class="news-share">
+                    <p>文章来源于www.ntsyny.cn</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部信息 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <h3>双羊生态农业科技有限公司</h3>
+                    </div>
+                    <p>双羊生态农业科技有限公司是一家专注于生态农业发展的企业，致力于为消费者提供绿色、健康、安全的农产品。</p>
+                </div>
+                <div class="footer-contact">
+                    <h3>联系我们</h3>
+                    <ul>
+                        <li><i class="fa fa-map-marker"></i> 地址：江苏省南通市如东县甜水村圩岸四组</li>
+                        <li><i class="fa fa-phone"></i> 电话：13921619977</li>
+                        <li><i class="fa fa-envelope"></i> 邮箱：343553576@qq.com</li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>快速链接</h3>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="about.html">关于我们</a></li>
+                        <li><a href="products.html">产品中心</a></li>
+                        <li><a href="news.html">新闻动态</a></li>
+                        <li><a href="contact.html">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-qrcode">
+                    <div class="qrcode-container">
+                        <h3>关注我们</h3>
+                        <div class="qrcode">
+                            <img src="images/concat.png" alt="微信公众号">
+                            <p>扫码关注微信公众号</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 双羊生态农业科技有限公司 版权所有 | <a href="https://beian.miit.gov.cn" target="_blank">备案号：沪ICP备2025127235号-1</a> | <a href="sitemap.htm">网站地图</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部 -->
+    <div class="back-to-top">
+        <i class="fa fa-angle-up"></i>
+    </div>
+
+    <!-- JS文件 -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
