@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://www.ntsyny.cn/sitemap.xml
+Sitemap: https://www.ntsyny.com/sitemap.xml

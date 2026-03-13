@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -179,6 +179,22 @@
             }
         }
     </style>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "publisher": {
+    "@type": "Organization",
+    "name": "双羊生态农业科技有限公司",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.ntsyny.com/images/sylogo.jpg"
+    }
+  }
+}
+    </script>
 </head>
 <body>
     <!-- 顶部信息栏 -->
@@ -224,14 +240,39 @@
                 <h1>新闻详情</h1>
             </div>
         </div>
-    </section>
+    </section
+
+<nav aria-label="Breadcrumb" class="breadcrumb">
+  <div class="container">
+    <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a itemprop="item" href="https://www.ntsyny.com/">
+        <span itemprop="name">首页</span>
+      </a>
+      <meta itemprop="position" content="1" />
+    </li>
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="https://www.ntsyny.com/news.html">
+          <span itemprop="name">新闻动态</span>
+        </a>
+        <meta itemprop="position" content="2" />
+      </li>
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span itemprop="name">新闻详情</span>
+        <meta itemprop="position" content="3" />
+      </li>
+    </ol>
+  </div>
+</nav>
+
+>
 
     <!-- 新闻详情内容 -->
     <section class="page-content">
         <div class="container">
             <div class="news-detail">
                 <div class="news-header">
-                    <h1>如东曹埠芦笋在上海农博会火啦！🔥</h1>
+                    
                     <div class="news-meta">
                         <span><i class="fa fa-calendar"></i> 2025-06-15</span>
                         <span><i class="fa fa-user"></i> 来源：双羊生态农业</span>
@@ -264,7 +305,7 @@
                 
                 <!-- 分享按钮 -->
                 <div class="news-share">
-                    <p>文章来源于www.ntsyny.cn</p>
+                    <p>文章来源于www.ntsyny.com</p>
                 </div>
             </div>
         </div>
